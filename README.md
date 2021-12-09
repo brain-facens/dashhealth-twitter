@@ -2,15 +2,15 @@
 # __Análise de Tweets Sobre "Sáude" de Sorocaba__
 
 ## __Descrição Técnica__
-Projeto no qual o objetivo é analisar o conteúdo de tweets sobre saúde na região de Sorocaba e apresentar visualmente em um dashboard os resultados encontrados.[em Python3.8](#)
+Projeto no qual o objetivo é analisar o conteúdo de tweets sobre saúde na região de Sorocaba e apresentar visualmente em um dashboard os resultados encontrados [em Python3.8](#)
 
 ## __Teoria__
 
 ## **Arquivo Api_twitter.py e Cap_tweety.py**
-Esses arquivos são responsáveis pela captura dos tweets. Foi utilizada uma biblioteca chamada Tweepy, na qual faz a função de acessar a API do Twitter e realizar a captura dos tweets. Como utilizamos uma versão gratuita da API do Twitter (Standard version), podemos somente fazer uma captura de 900 requests a cada 15 minutos, por isso temos uma relativa demora para o termino do código.
+Esses arquivos são responsáveis pela captura dos tweets. Foi utilizada uma biblioteca chamada Tweepy, na qual faz a função de acessar a API do Twitter e realizar a captura dos tweets. Como utilizamos uma versão gratuita da API do Twitter (Standard version), podemos somente fazer uma captura de 900 requests a cada 15 minutos, por isso temos uma relativa demora para o término do código.
 
 ## **Arquivo Api_dashboard.py e Dashboard.py**
-Esses arquivos são responsáveis pela criação do Dashboard, gerado através dos arquivos criados após rodar o arquivo Api_twitter.py. Neste Dashboard são encontradas várias análises em referência das palavras relacionadas ao tema "Saúde" na região de Sorocaba. Utilizamos gráficos como o de barras, de dispersão, nuvem de palavras e etc... Como pode ser visto nas fotos encontradas no anexo **Fotos**
+Esses arquivos são responsáveis pela criação do Dashboard, gerado através dos arquivos criados após rodar o arquivo Api_twitter.py. Neste Dashboard são encontradas várias análises em referência das palavras relacionadas ao tema "Saúde" na região de Sorocaba. Utilizamos gráficos como o de barras, de dispersão, nuvem de palavras e etc... Como pode ser visto nas fotos encontradas no anexo **Fotos**.
 
 ## **Arquivo Ngrok**
 Neste arquivo, é gerado um link para o acesso ao Dashboard, devido ao fato de que quando rodamos a Api_dashboard, é fornecido um link de Local Host. Por esse motivo, não conseguimos ter acesso ao dashboard em outra máquina, para isso, utilizamos o arquivo Ngrok.
@@ -24,14 +24,13 @@ Instale o requirements.txt:
 ```
 pip install -r requirements.txt
 ```
-![145462457-23e1d6fe-d549-49e0-bddb-cc09babbde02](https://user-images.githubusercontent.com/87439511/145462908-d59a1878-212f-49de-b5f1-98b2f936442d.png)
 
 ## __Guia de Implementação__
-Primeiramente, o usuário deve criar uma conta no [Twitter Developer](https://developer.twitter.com/en/portal/dashboard), você deve criar um projeto para que possa ser criado um Consumer Keys e Authentication Tokens como é mostrado abaixo.
+Primeiramente, o usuário deve criar uma conta no [Twitter Developer](https://developer.twitter.com/en/portal/dashboard), e depois deve criar um projeto para que possa ser gerado um Consumer Keys e Authentication Tokens como é mostrado abaixo.
 
 > ![twitter_developer](https://user-images.githubusercontent.com/87439511/145449368-ea543944-a2eb-4362-b2d3-8f04a91f48df.png)
 
-Essas informações devem ser colocadas no arquivo api_twiiter.py, como é mostrado abaixo.
+Essas informações devem ser colocadas no arquivo api_twitter.py, como é mostrado abaixo.
 
 > ![image](https://user-images.githubusercontent.com/87439511/145450294-d9682a86-78d9-4f5a-b90c-874d5f8444b5.png)
 
@@ -43,13 +42,13 @@ Logo após colocadas essas informações, o usuário deve rodar o api_twitter.py
 >- Analise_semana
 
 Logo após o termino da execução, deve ser rodado api_dashboard.py, desta forma, será gerado o Dashboard da semana.
-OBS: pode ser selecionado qual semana desejável, basta editar no arquivo.
+OBS: pode ser selecionado qual semana desejável, basta editar no arquivo, como é mostrado abaixo:
 
 > ![image](https://user-images.githubusercontent.com/87439511/145462260-9cb865b3-52d6-4faa-870b-6e8855821130.png)
 
 > ![image](https://user-images.githubusercontent.com/87439511/145462457-23e1d6fe-d549-49e0-bddb-cc09babbde02.png)
 
-Finalmente, abre um novo terminal e coloque o comando **ngrok http 8050**, e será gerado um link para acessar tanto no pc local quando em outros computadores, basta usar o link.
+Finalmente, abra um novo terminal e coloque o comando **ngrok http 8050**, e será gerado um link para acessar tanto no pc local quanto em outros computadores, basta usar o link.
 > ![image](https://user-images.githubusercontent.com/87439511/145463741-55d5fc9c-95c3-4223-b31a-8c1d650ee7af.png)
 
 ## __Fotos__

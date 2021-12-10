@@ -1,6 +1,10 @@
 from pyngrok import ngrok
-import config
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 ngrok.kill()
-ngrok.set_auth_token(config.Auth)
+Auth = os.getenv('Auth_ngrok')
+ngrok.set_auth_token(Auth)
 http_tunnel = ngrok.connect(8050)
 print (ngrok.get_tunnels())

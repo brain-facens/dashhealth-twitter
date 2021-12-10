@@ -2,10 +2,16 @@ from cap_tweety import Tweety
 import os
 import requests 
 from zipfile import ZipFile
-import config
+from dotenv import load_dotenv
+load_dotenv()
 
-analise = Tweety(config.chave_consumidor, config.segredo_consumidor, 
-config.token_acesso, config.token_acesso_segredo)
+chave_consumidor = os.getenv('chave_consumidor_twitter')
+segredo_consumidor = os.getenv('segredo_consumidor_twitter')
+token_acesso = os.getenv('token_acesso_twitter')
+token_acesso_segredo = os.getenv('token_acesso_segredo_twitter')
+
+analise = Tweety(chave_consumidor, segredo_consumidor, 
+token_acesso, token_acesso_segredo)
 
 def baixar_arquivo(url, endereco):
     resposta = requests.get(url, stream=True)

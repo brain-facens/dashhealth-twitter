@@ -2,16 +2,10 @@ from cap_tweety import Tweety
 import os
 import requests 
 from zipfile import ZipFile
+import config
 
-#Colocar as informações da Api do Twitter(deve ser feito uma conta na API do TWITTER para ter acesso a ele)
-
-chave_consumidor = ' '
-segredo_consumidor = ' '
-token_acesso = ' '
-token_acesso_segredo = ' '
-
-analise = Tweety(chave_consumidor, segredo_consumidor, 
-token_acesso, token_acesso_segredo)
+analise = Tweety(config.chave_consumidor, config.segredo_consumidor, 
+config.token_acesso, config.token_acesso_segredo)
 
 def baixar_arquivo(url, endereco):
     resposta = requests.get(url, stream=True)
